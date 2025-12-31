@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초등학교 4학년 사회 디지털 교과서</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>4학년 사회 디지털 교과서</h1>
+            </div>
+            <nav class="nav">
+                <button class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">홈</a></li>
+                    <li><a href="#units" class="nav-link">단원 목차</a></li>
+                    <li><a href="#resources" class="nav-link">학습자료</a></li>
+                    <li><a href="#quiz" class="nav-link">퀴즈</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 메인 배너 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">충청북도 청주시의 역사와 문화를 배워요!</h2>
+                <p class="hero-subtitle">직지의 고장 청주! 우리 고장의 모습과 변화를 알아봐요</p>
+                <a href="#units" class="btn btn-primary">학습 시작하기</a>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-map-marked-alt"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 단원 목차 -->
+    <section class="units" id="units">
+        <div class="container">
+            <h2 class="section-title">단원 목차</h2>
+            <div class="units-grid">
+                <!-- 1단원 -->
+                <div class="unit-card" data-unit="1">
+                    <div class="unit-icon">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <h3 class="unit-title">1. 청주의 위치와 특성</h3>
+                    <p class="unit-description">지도를 통해 청주시의 위치를 찾아보고, 충북의 중심 도시인 청주의 자연환경과 생활 모습을 알아봅니다.</p>
+                    <div class="unit-topics">
+                        <span class="topic-tag">지도 읽기</span>
+                        <span class="topic-tag">청주의 위치</span>
+                        <span class="topic-tag">무심천과 자연</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="openUnit(1)">학습하기</button>
+                </div>
+
+                <!-- 2단원 -->
+                <div class="unit-card" data-unit="2">
+                    <div class="unit-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3 class="unit-title">2. 청주의 역사</h3>
+                    <p class="unit-description">직지의 고장 청주! 상당산성, 용두사지철당간 등 청주에 남아있는 역사적 장소와 문화유산을 알아봅니다.</p>
+                    <div class="unit-topics">
+                        <span class="topic-tag">직지와 인쇄 문화</span>
+                        <span class="topic-tag">상당산성</span>
+                        <span class="topic-tag">청주 역사</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="openUnit(2)">학습하기</button>
+                </div>
+
+                <!-- 3단원 -->
+                <div class="unit-card" data-unit="3">
+                    <div class="unit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="unit-title">3. 청주의 생활과 변화</h3>
+                    <p class="unit-description">시간의 흐름에 따라 청주 사람들의 생활 모습이 어떻게 변화했는지 알아봅니다. 육거리시장, 무심천의 변화를 살펴봐요.</p>
+                    <div class="unit-topics">
+                        <span class="topic-tag">옛날 청주</span>
+                        <span class="topic-tag">도시 발전</span>
+                        <span class="topic-tag">현대 청주</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="openUnit(3)">학습하기</button>
+                </div>
+
+                <!-- 4단원 -->
+                <div class="unit-card" data-unit="4">
+                    <div class="unit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="unit-title">4. 청주와 다른 지역의 교류</h3>
+                    <p class="unit-description">충북의 중심 청주와 다른 지역의 생활 모습을 비교하고, 지역 간 교류의 중요성을 알아봅니다.</p>
+                    <div class="unit-topics">
+                        <span class="topic-tag">충북의 중심</span>
+                        <span class="topic-tag">지역 교류</span>
+                        <span class="topic-tag">함께 발전</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="openUnit(4)">학습하기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 학습자료 -->
+    <section class="resources" id="resources">
+        <div class="container">
+            <h2 class="section-title">학습자료</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h3>사진 갤러리</h3>
+                    <p>우리 지역의 옛날과 현재 모습을 사진으로 비교해봅니다.</p>
+                    <a href="gallery.html" class="resource-link">보러가기 <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>인터랙티브 지도</h3>
+                    <p>우리 지역의 주요 장소를 지도에서 직접 탐험해봅니다.</p>
+                    <a href="map.html" class="resource-link">탐험하기 <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>워크시트</h3>
+                    <p>학습한 내용을 정리하고 복습할 수 있는 활동지입니다.</p>
+                    <a href="worksheet.html" class="resource-link">작성하기 <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>동영상 자료</h3>
+                    <p>각 단원별 교육 동영상과 다큐멘터리를 시청할 수 있습니다.</p>
+                    <a href="#quiz" class="resource-link">준비중 <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 퀴즈 섹션 -->
+    <section class="quiz" id="quiz">
+        <div class="container">
+            <h2 class="section-title">학습 퀴즈</h2>
+            <div class="quiz-container">
+                <div class="quiz-intro">
+                    <i class="fas fa-brain"></i>
+                    <h3>배운 내용을 확인해봐요!</h3>
+                    <p>각 단원별로 재미있는 퀴즈를 풀어보면서 배운 내용을 복습할 수 있어요.</p>
+                    <button class="btn btn-primary" onclick="startQuiz()">퀴즈 시작하기</button>
+                </div>
+                
+                <div class="quiz-content" id="quizContent" style="display: none;">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span class="progress-text" id="progressText">문제 1 / 5</span>
+                    </div>
+                    
+                    <div class="question-card">
+                        <h3 class="question-title" id="questionTitle">문제가 여기에 표시됩니다</h3>
+                        <div class="answer-options" id="answerOptions">
+                            <!-- 답안이 동적으로 추가됩니다 -->
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-result" id="quizResult" style="display: none;">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <h3 id="resultTitle">결과</h3>
+                        <p id="resultMessage">메시지</p>
+                        <button class="btn btn-primary" onclick="nextQuestion()">다음 문제</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>초등학교 4학년 사회</h4>
+                    <p>우리 지역의 역사와 문화를 배우는 디지털 교과서입니다.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li><a href="#home">홈</a></li>
+                        <li><a href="#units">단원 목차</a></li>
+                        <li><a href="#resources">학습자료</a></li>
+                        <li><a href="#quiz">퀴즈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>문의하기</h4>
+                    <p><i class="fas fa-envelope"></i> contact@school.edu</p>
+                    <p><i class="fas fa-phone"></i> 02-1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 초등학교 4학년 사회 디지털 교과서. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 단원 상세 모달 -->
+    <div class="modal" id="unitModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modalContent">
+                <!-- 단원 상세 내용이 동적으로 추가됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

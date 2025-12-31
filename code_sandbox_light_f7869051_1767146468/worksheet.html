@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>워크시트 - 초등학교 4학년 사회</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>4학년 사회 디지털 교과서</h1>
+            </div>
+            <nav class="nav">
+                <button class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">홈</a></li>
+                    <li><a href="index.html#units" class="nav-link">단원 목차</a></li>
+                    <li><a href="gallery.html" class="nav-link">사진 갤러리</a></li>
+                    <li><a href="map.html" class="nav-link">지도</a></li>
+                    <li><a href="worksheet.html" class="nav-link active">워크시트</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-file-alt"></i> 학습 워크시트</h1>
+            <p>배운 내용을 정리하고 복습해봅시다</p>
+        </div>
+    </section>
+
+    <!-- 워크시트 목록 -->
+    <section class="worksheet-section">
+        <div class="container">
+            <div class="worksheet-grid">
+                <!-- 1단원 워크시트 -->
+                <div class="worksheet-card">
+                    <div class="worksheet-header">
+                        <i class="fas fa-map"></i>
+                        <h3>1단원: 우리 지역의 위치와 특성</h3>
+                    </div>
+                    <div class="worksheet-content">
+                        <h4><i class="fas fa-pencil-alt"></i> 활동 1: 지도 읽기</h4>
+                        <div class="activity-box">
+                            <p><strong>다음 물음에 답하세요:</strong></p>
+                            <ol>
+                                <li>우리 지역의 동쪽에는 무엇이 있나요?</li>
+                                <li>우리 지역의 서쪽에는 무엇이 있나요?</li>
+                                <li>우리 지역의 남쪽에는 무엇이 있나요?</li>
+                                <li>우리 지역의 북쪽에는 무엇이 있나요?</li>
+                            </ol>
+                        </div>
+
+                        <h4><i class="fas fa-pencil-alt"></i> 활동 2: 지역의 특징 찾기</h4>
+                        <div class="activity-box">
+                            <p><strong>우리 지역의 자연환경에 ○표 하세요:</strong></p>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox"> 산이 많다</label>
+                                <label><input type="checkbox"> 강이 흐른다</label>
+                                <label><input type="checkbox"> 바다가 있다</label>
+                                <label><input type="checkbox"> 평야가 넓다</label>
+                            </div>
+                        </div>
+
+                        <h4><i class="fas fa-pencil-alt"></i> 활동 3: 특산물 조사하기</h4>
+                        <div class="activity-box">
+                            <p><strong>우리 지역의 특산물을 적어보세요:</strong></p>
+                            <textarea class="worksheet-textarea" placeholder="예) 사과, 배, 쌀 등"></textarea>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="printWorksheet(1)">
+                        <i class="fas fa-print"></i> 인쇄하기
+                    </button>
+                </div>
+
+                <!-- 2단원 워크시트 -->
+                <div class="worksheet-card">
+                    <div class="worksheet-header">
+                        <i class="fas fa-history"></i>
+                        <h3>2단원: 우리 지역의 역사</h3>
+                    </div>
+                    <div class="worksheet-content">
+                        <h4><i class="fas fa-pencil-alt"></i> 활동 1: 문화유산 조사</h4>
+                        <div class="activity-box">
+                            <p><strong>우리 지역의 문화유산을 조사해봅시다:</strong></p>
+                            <table class="worksheet-table">
+                                <tr>
+                                    <th>문화유산 이름</th>
+                                    <th>위치</th>
+                                    <th>특징</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" placeholder="예) ○○사찰"></td>
+                                    <td><input type="text" placeholder="예) △△동"></td>
+                                    <td><input type="text" placeholder="예) 500년 된 은행나무"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <h4><i class="fas fa-pencil-alt"></i> 활동 2: 역사 인물 조사</h4>
+                        <div class="activity-box">
+                            <p><strong>우리 지역과 관련된 역사 인물을 조사해보세요:</strong></p>
+                            <div class="form-group">
+                                <label>인물 이름:</label>
+                                <input type="text" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>어떤 일을 했나요?</label>
+                                <textarea class="worksheet-textarea"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>왜 기억해야 하나요?</label>
+                                <textarea class="worksheet-textarea"></textarea>
+                            </div>
+                        </div>
+
+                        <h4><i class="fas fa-pencil-alt"></i> 활동 3: 옛날 이야기</h4>
+                        <div class="activity-box">
+                            <p><strong>우리 지역의 전설이나 설화를 적어보세요:</strong></p>
+                            <textarea class="worksheet-textarea" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="printWorksheet(2)">
+                        <i class="fas fa-print"></i> 인쇄하기
+                    </button>
+                </div>
+
+                <!-- 3단원 워크시트 -->
+                <div class="worksheet-card">
+                    <div class="worksheet-header">
+                        <i class="fas fa-users"></i>
+                        <h3>3단원: 우리 지역의 생활과 변화</h3>
+                    </div>
+                    <div class="worksheet-content">
+                        <h4><i class="fas fa-pencil-alt"></i> 활동 1: 옛날과 오늘날 비교하기</h4>
+                        <div class="activity-box">
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>항목</th>
+                                        <th>옛날</th>
+                                        <th>오늘날</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>집</strong></td>
+                                        <td><input type="text" placeholder="예) 초가집, 한옥"></td>
+                                        <td><input type="text" placeholder="예) 아파트, 빌라"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>교통수단</strong></td>
+                                        <td><input type="text"></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>통신 방법</strong></td>
+                                        <td><input type="text"></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>놀이</strong></td>
+                                        <td><input type="text"></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h4><i class="fas fa-pencil-alt"></i> 활동 2: 할아버지, 할머니 인터뷰</h4>
+                        <div class="activity-box">
+                            <p><strong>어르신들께 옛날 이야기를 들어봅시다:</strong></p>
+                            <div class="interview-section">
+                                <p><i class="fas fa-question-circle"></i> 어렸을 때 어디에서 사셨나요?</p>
+                                <textarea class="worksheet-textarea" rows="2"></textarea>
+                                
+                                <p><i class="fas fa-question-circle"></i> 어떤 놀이를 하며 노셨나요?</p>
+                                <textarea class="worksheet-textarea" rows="2"></textarea>
+                                
+                                <p><i class="fas fa-question-circle"></i> 가장 기억에 남는 일은 무엇인가요?</p>
+                                <textarea class="worksheet-textarea" rows="2"></textarea>
+                            </div>
+                        </div>
+
+                        <h4><i class="fas fa-pencil-alt"></i> 활동 3: 미래 상상하기</h4>
+                        <div class="activity-box">
+                            <p><strong>30년 후 우리 지역은 어떻게 변해있을까요?</strong></p>
+                            <textarea class="worksheet-textarea" rows="4" placeholder="상상력을 발휘하여 자유롭게 적어보세요."></textarea>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="printWorksheet(3)">
+                        <i class="fas fa-print"></i> 인쇄하기
+                    </button>
+                </div>
+
+                <!-- 4단원 워크시트 -->
+                <div class="worksheet-card">
+                    <div class="worksheet-header">
+                        <i class="fas fa-handshake"></i>
+                        <h3>4단원: 다양한 지역과 교류</h3>
+                    </div>
+                    <div class="worksheet-content">
+                        <h4><i class="fas fa-pencil-alt"></i> 활동 1: 다른 지역 조사하기</h4>
+                        <div class="activity-box">
+                            <p><strong>우리나라의 다른 지역을 조사해봅시다:</strong></p>
+                            <div class="form-group">
+                                <label>지역 이름:</label>
+                                <input type="text" class="form-input" placeholder="예) 강원도, 제주도 등">
+                            </div>
+                            <div class="form-group">
+                                <label>그 지역의 특징:</label>
+                                <textarea class="worksheet-textarea" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>유명한 것:</label>
+                                <textarea class="worksheet-textarea" rows="2"></textarea>
+                            </div>
+                        </div>
+
+                        <h4><i class="fas fa-pencil-alt"></i> 활동 2: 지역 간 교류 찾기</h4>
+                        <div class="activity-box">
+                            <p><strong>우리 지역이 다른 지역과 어떻게 교류하는지 적어보세요:</strong></p>
+                            <div class="exchange-grid">
+                                <div class="exchange-item">
+                                    <i class="fas fa-truck"></i>
+                                    <p><strong>물건 교류</strong></p>
+                                    <textarea class="worksheet-textarea" rows="2" placeholder="예) 농산물, 수산물 등"></textarea>
+                                </div>
+                                <div class="exchange-item">
+                                    <i class="fas fa-users"></i>
+                                    <p><strong>사람 교류</strong></p>
+                                    <textarea class="worksheet-textarea" rows="2" placeholder="예) 관광, 출장 등"></textarea>
+                                </div>
+                                <div class="exchange-item">
+                                    <i class="fas fa-palette"></i>
+                                    <p><strong>문화 교류</strong></p>
+                                    <textarea class="worksheet-textarea" rows="2" placeholder="예) 축제, 공연 등"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4><i class="fas fa-pencil-alt"></i> 활동 3: 협력 방안 생각하기</h4>
+                        <div class="activity-box">
+                            <p><strong>지역 간 협력을 위해 우리가 할 수 있는 일:</strong></p>
+                            <ol>
+                                <li><input type="text" class="form-input" placeholder="예) 다른 지역 특산물 사용하기"></li>
+                                <li><input type="text" class="form-input"></li>
+                                <li><input type="text" class="form-input"></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="printWorksheet(4)">
+                        <i class="fas fa-print"></i> 인쇄하기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 학습 팁 섹션 -->
+    <section class="tips-section">
+        <div class="container">
+            <h2 class="section-title">워크시트 활용 팁</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>차근차근 작성하기</h3>
+                    <p>한 번에 모두 하려고 하지 말고, 한 활동씩 천천히 완성해보세요.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>교과서 참고하기</h3>
+                    <p>모르는 내용은 교과서나 인터넷을 찾아보며 공부해보세요.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>가족과 함께하기</h3>
+                    <p>부모님이나 할아버지, 할머니께 여쭤보면 더 많은 것을 배울 수 있어요.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>사진 찍어두기</h3>
+                    <p>문화유산이나 지역 명소를 직접 방문해서 사진을 찍어보세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>초등학교 4학년 사회</h4>
+                    <p>우리 지역의 역사와 문화를 배우는 디지털 교과서입니다.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li><a href="index.html">홈</a></li>
+                        <li><a href="index.html#units">단원 목차</a></li>
+                        <li><a href="gallery.html">사진 갤러리</a></li>
+                        <li><a href="map.html">지도</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>문의하기</h4>
+                    <p><i class="fas fa-envelope"></i> contact@school.edu</p>
+                    <p><i class="fas fa-phone"></i> 02-1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 초등학교 4학년 사회 디지털 교과서. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/worksheet.js"></script>
+</body>
+</html>

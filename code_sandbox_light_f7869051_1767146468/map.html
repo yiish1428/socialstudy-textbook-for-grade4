@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인터랙티브 지도 - 초등학교 4학년 사회</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>4학년 사회 디지털 교과서</h1>
+            </div>
+            <nav class="nav">
+                <button class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">홈</a></li>
+                    <li><a href="index.html#units" class="nav-link">단원 목차</a></li>
+                    <li><a href="gallery.html" class="nav-link">사진 갤러리</a></li>
+                    <li><a href="map.html" class="nav-link active">지도</a></li>
+                    <li><a href="worksheet.html" class="nav-link">워크시트</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-map-marked-alt"></i> 청주 인터랙티브 지도</h1>
+            <p>지도에서 청주의 주요 장소를 탐험해봅시다</p>
+        </div>
+    </section>
+
+    <!-- 지도 설명 -->
+    <section class="map-intro">
+        <div class="container">
+            <div class="map-guide">
+                <h2><i class="fas fa-info-circle"></i> 지도 사용 방법</h2>
+                <div class="guide-grid">
+                    <div class="guide-item">
+                        <i class="fas fa-hand-pointer"></i>
+                        <h3>클릭하세요</h3>
+                        <p>지도의 장소 마커를 클릭하면 상세 정보를 볼 수 있습니다</p>
+                    </div>
+                    <div class="guide-item">
+                        <i class="fas fa-search-location"></i>
+                        <h3>탐색하세요</h3>
+                        <p>각 지역의 특징과 역사를 알아보세요</p>
+                    </div>
+                    <div class="guide-item">
+                        <i class="fas fa-compass"></i>
+                        <h3>방위 확인</h3>
+                        <p>동, 서, 남, 북 방위를 확인하며 위치를 파악하세요</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 지도 컨테이너 -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-container">
+                <!-- 방위 표시 -->
+                <div class="compass">
+                    <div class="compass-arrow">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>북</span>
+                    </div>
+                </div>
+
+                <!-- 인터랙티브 지도 -->
+                <div class="interactive-map">
+                    <!-- 지도 배경 -->
+                    <div class="map-background">
+                        <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                            <!-- 산 -->
+                            <path d="M 50 300 L 150 150 L 250 300 Z" fill="#90C695" stroke="#5A8F5A" stroke-width="2"/>
+                            <path d="M 600 300 L 700 180 L 750 300 Z" fill="#90C695" stroke="#5A8F5A" stroke-width="2"/>
+                            
+                            <!-- 강 -->
+                            <path d="M 0 350 Q 200 370 400 350 Q 600 330 800 350" fill="none" stroke="#6DB3F2" stroke-width="15"/>
+                            <path d="M 0 355 Q 200 375 400 355 Q 600 335 800 355" fill="none" stroke="#A3D5FF" stroke-width="10"/>
+                            
+                            <!-- 도로 -->
+                            <line x1="0" y1="450" x2="800" y2="450" stroke="#888" stroke-width="10"/>
+                            <line x1="400" y1="0" x2="400" y2="600" stroke="#888" stroke-width="10"/>
+                            
+                            <!-- 배경 영역 -->
+                            <rect x="0" y="300" width="800" height="300" fill="#E8F5E9" opacity="0.3"/>
+                        </svg>
+                    </div>
+
+                    <!-- 장소 마커들 -->
+                    <div class="marker" data-location="city-hall" style="left: 45%; top: 55%;">
+                        <div class="marker-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <span class="marker-label">시청</span>
+                    </div>
+
+                    <div class="marker" data-location="school" style="left: 30%; top: 40%;">
+                        <div class="marker-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <span class="marker-label">학교</span>
+                    </div>
+
+                    <div class="marker" data-location="temple" style="left: 20%; top: 30%;">
+                        <div class="marker-icon">
+                            <i class="fas fa-torii-gate"></i>
+                        </div>
+                        <span class="marker-label">사찰</span>
+                    </div>
+
+                    <div class="marker" data-location="market" style="left: 60%; top: 70%;">
+                        <div class="marker-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <span class="marker-label">전통시장</span>
+                    </div>
+
+                    <div class="marker" data-location="park" style="left: 70%; top: 40%;">
+                        <div class="marker-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <span class="marker-label">공원</span>
+                    </div>
+
+                    <div class="marker" data-location="museum" style="left: 50%; top: 35%;">
+                        <div class="marker-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <span class="marker-label">박물관</span>
+                    </div>
+
+                    <div class="marker" data-location="station" style="left: 40%; top: 75%;">
+                        <div class="marker-icon">
+                            <i class="fas fa-train"></i>
+                        </div>
+                        <span class="marker-label">기차역</span>
+                    </div>
+
+                    <div class="marker" data-location="hanok" style="left: 65%; top: 55%;">
+                        <div class="marker-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <span class="marker-label">한옥마을</span>
+                    </div>
+                </div>
+
+                <!-- 정보 패널 -->
+                <div class="info-panel" id="infoPanel">
+                    <button class="close-info" id="closeInfo">&times;</button>
+                    <div id="infoPanelContent">
+                        <h3>장소를 선택하세요</h3>
+                        <p>지도의 마커를 클릭하면 상세 정보가 나타납니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 지역 정보 섹션 -->
+    <section class="region-info">
+        <div class="container">
+            <h2 class="section-title">청주의 특징</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-mountain"></i>
+                    <h3>지형</h3>
+                    <p>주변에 상당산, 우암산 등이 있어 등산하기 좋습니다. 대부분 평야 지역으로 넓고 평평한 땅이 많아 농사와 도시 발달에 유리합니다.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-water"></i>
+                    <h3>무심천</h3>
+                    <p>청주 중심을 가로지르는 무심천은 생태하천으로 복원되어 벚꽃 명소가 되었습니다. 산책로와 자전거 도로가 잘 조성되어 있습니다.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-city"></i>
+                    <h3>도시 발달</h3>
+                    <p>충북의 행정·경제·문화 중심지로 85만 명이 살고 있습니다. 청주시청을 중심으로 다양한 시설이 발달했습니다.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>교통</h3>
+                    <p>경부고속도로와 중부고속도로가 만나는 교통의 요지입니다. KTX 오송역과 청주국제공항이 있어 전국, 세계와 연결됩니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>초등학교 4학년 사회</h4>
+                    <p>우리 지역의 역사와 문화를 배우는 디지털 교과서입니다.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li><a href="index.html">홈</a></li>
+                        <li><a href="index.html#units">단원 목차</a></li>
+                        <li><a href="gallery.html">사진 갤러리</a></li>
+                        <li><a href="map.html">지도</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>문의하기</h4>
+                    <p><i class="fas fa-envelope"></i> contact@school.edu</p>
+                    <p><i class="fas fa-phone"></i> 02-1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 초등학교 4학년 사회 디지털 교과서. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/map.js"></script>
+</body>
+</html>
